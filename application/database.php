@@ -8,20 +8,21 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+use think\Env;
 
 return [
     // 数据库类型
     'type'           => 'mysql',
     // 服务器地址
-    'hostname'       => '127.0.0.1',
+    'hostname'       => Env::get('database.hostname'),
     // 数据库名
-    'database'       => 'think_admin',
+    'database'       => Env::get('database.database'),
     // 用户名
-    'username'       => 'root',
+    'username'       => Env::get('database.username'),
     // 密码
-    'password'       => 'root',
+    'password'       => Env::get('database.password'),
     // 端口
-    'hostport'       => '',
+    'hostport'       => Env::get('database.hostport'),
     // 连接dsn
     'dsn'            => '',
     // 数据库连接参数
@@ -48,4 +49,6 @@ return [
     'auto_timestamp' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'    => false,
+    // 是否格式化datetime
+    'datetime_format' => false
 ];
